@@ -15,7 +15,9 @@ class AdminRole extends Model
      */
     public $timestamps = false;
 
-    //
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function permissions()
     {
         return $this->belongsToMany(
@@ -25,6 +27,10 @@ class AdminRole extends Model
             'permission_id'
         );
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function users()
     {
         return $this->belongsToMany(

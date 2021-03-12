@@ -15,6 +15,9 @@ class AdminRolePermission extends Model
      */
     public $timestamps = false;
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function roles()
     {
         return $this->belongsToMany(
